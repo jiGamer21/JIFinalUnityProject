@@ -5,12 +5,13 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private float speed = 5f;
-    private Rigidbody rb;
+   // private Rigidbody rb;
+    public GameObject Projectiles;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        //rb = GetComponent<Rigidbody>();
 
     }
 
@@ -20,10 +21,13 @@ public class PlayerController : MonoBehaviour
         float xInput = Input.GetAxis("Horizontal");
         float yInput = Input.GetAxis("Vertical");    
         
-        rb.velocity = new Vector3(xInput, yInput, speed * Time.deltaTime);
-        /*float forwardForce = Time.deltaTime * speed * xInput;
-        float sidewaysForce = Time.deltaTime * speed * yInput;
-*/
+      //  rb.velocity = new Vector3(xInput, yInput, speed * Time.deltaTime);
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            //Shoot
+            Instantiate(Projectiles, transform.position, Projectiles.transform.rotation);
+        }
         
     }
 }
