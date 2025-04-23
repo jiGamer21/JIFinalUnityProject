@@ -528,7 +528,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b4aede08eff58748889b49b04b6585b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Projectiles: {fileID: 3793601602747892237, guid: e7d33e185e1ab0449b11dc6fa9bcb000, type: 3}
+  LBulletPrefab: {fileID: 5372933613084301799, guid: 6a2dec4c21c044af3ba0b34810d9823a, type: 3}
+  RBulletPrefab: {fileID: 8644343842221383427, guid: 186ad6ce3ad814e3eb0a033685f6f8bd, type: 3}
 --- !u!64 &1807563234
 MeshCollider:
   m_ObjectHideFlags: 0

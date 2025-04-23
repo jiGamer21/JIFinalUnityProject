@@ -6,7 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     private float speed = 5f;
    // private Rigidbody rb;
-    public GameObject Projectiles;
+    public GameObject LBulletPrefab;
+    public GameObject RBulletPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +27,8 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //Shoot
-            Instantiate(Projectiles, transform.position, Projectiles.transform.rotation);
+            Instantiate(LBulletPrefab, transform.position, LBulletPrefab.transform.rotation);
+            Instantiate(RBulletPrefab, transform.position, RBulletPrefab.transform.rotation);
         }
         
     }
