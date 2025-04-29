@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8569705011760358484}
   - component: {fileID: 2385322319380808521}
   - component: {fileID: 7664431576835403826}
-  - component: {fileID: 85101706005103375}
   m_Layer: 0
   m_Name: RShotPrefab
   m_TagString: Bullets
@@ -108,16 +107,3 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &85101706005103375
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8644343842221383427}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb2900141f3a17545b2244ccb919a416, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 20

@@ -6,9 +6,10 @@ public class PlayerController : MonoBehaviour
 {
     private float speed = 5f;
    // private Rigidbody rb;
-    public GameObject LBulletPrefab;
-    public GameObject RBulletPrefab;
-    private float turnSpeed = 60f;
+   // public GameObject LBulletPrefab;
+    //public GameObject RBulletPrefab;
+    public float turnSpeed = 60f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -25,17 +26,24 @@ public class PlayerController : MonoBehaviour
         
       //  rb.velocity = new Vector3(xInput, yInput, speed * Time.deltaTime);
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        //if (Input.GetKeyDown(KeyCode.Space))
         {
             //Shoot
-            Instantiate(LBulletPrefab, LBulletPrefab.transform.position, LBulletPrefab.transform.rotation);
-            Instantiate(RBulletPrefab, RBulletPrefab.transform.position, RBulletPrefab.transform.rotation);
+            //Instantiate(LBulletPrefab, LBulletPrefab.transform.position, LBulletPrefab.transform.rotation);
+            //Instantiate(RBulletPrefab, RBulletPrefab.transform.position, RBulletPrefab.transform.rotation);
         }
         
        
         
-        transform.Rotate(Vector3.forward * yInput * turnSpeed * Time.deltaTime);
+        transform.Rotate(Vector3.forward * xInput * turnSpeed * Time.deltaTime);
+        transform.Rotate(Vector3.up * yInput * turnSpeed * Time.deltaTime);
         
     }
 
+    public float getTurnSpeed()
+    {
+        return turnSpeed;
+    }
+
+    //q and e to rotate on y
 }
