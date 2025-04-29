@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
    // private Rigidbody rb;
     public GameObject LBulletPrefab;
     public GameObject RBulletPrefab;
+    private float turnSpeed = 60f;
 
     // Start is called before the first frame update
     void Start()
@@ -27,9 +28,14 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //Shoot
-            Instantiate(LBulletPrefab, transform.position, LBulletPrefab.transform.rotation);
-            Instantiate(RBulletPrefab, transform.position, RBulletPrefab.transform.rotation);
+            Instantiate(LBulletPrefab, LBulletPrefab.transform.position, LBulletPrefab.transform.rotation);
+            Instantiate(RBulletPrefab, RBulletPrefab.transform.position, RBulletPrefab.transform.rotation);
         }
         
+       
+        
+        transform.Rotate(Vector3.forward * yInput * turnSpeed * Time.deltaTime);
+        
     }
+
 }

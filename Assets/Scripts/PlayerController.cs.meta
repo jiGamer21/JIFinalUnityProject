@@ -3,7 +3,9 @@ guid: 4b4aede08eff58748889b49b04b6585b
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - LBulletPrefab: {fileID: 5372933613084301799, guid: 6a2dec4c21c044af3ba0b34810d9823a, type: 3}
+  - RBulletPrefab: {fileID: 8644343842221383427, guid: 186ad6ce3ad814e3eb0a033685f6f8bd, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
