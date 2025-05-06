@@ -22,6 +22,11 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
+        //if (gameManager.isGameActive)
+        //{
+        //    timerIsRunning = true;
+        //}
+
         if (timerIsRunning)
         {
             if (timeRemaining > 0)

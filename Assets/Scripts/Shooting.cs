@@ -10,34 +10,39 @@ public class Shooting : MonoBehaviour
     private GameObject player;
     private float turnSpeed = 60f;
     public Transform playerTransform;
+    private GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
         //rb = GetComponent<Rigidbody>();
         player = GameObject.Find("PLANE");
+        gameManager = gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        if (transform.position.y > -20 && transform.position.y < 20 | transform.position.x > -15 && transform.position.x < 15 |
-          transform.position.z > -20 && transform.position.z < 15)
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-        {
-            //Shoot
-            Instantiate(bullets, bullets.transform.position, transform.rotation);
+        //if (gameManager.isGameActive)
+        //{
+            if (transform.position.y > -20 && transform.position.y < 20 | transform.position.x > -15 && transform.position.x < 15 |
+               transform.position.z > -20 && transform.position.z < 15)
+            {
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    //Shoot
+                    Instantiate(bullets, bullets.transform.position, transform.rotation);
            
-        }
-        }
+                }
+            }
         
-        else
-        {
-            //Destroys out of bounds bullets
-            Destroy(gameObject);
-        }
+            else
+            {
+                //Destroys out of bounds bullets
+                Destroy(gameObject);
+            }
+        //}
+
     }
    
 }

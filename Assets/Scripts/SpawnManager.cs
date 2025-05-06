@@ -30,11 +30,11 @@ public class SpawnManager: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        enemyCount = FindObjectsOfType<Enemy>().Length;
 
-        while (gameManager.isGameActive)
-        {
-            enemyCount = FindObjectsOfType<Enemy>().Length;
+        //while (gameManager.isGameActive)
+        //{
+           
             
             if(enemyCount == 0)
             {
@@ -42,7 +42,7 @@ public class SpawnManager: MonoBehaviour
                 SpawnEnemyWave(waveNumber);
          
             }
-        }
+        //}
     }
 
     private Vector3 EnemySpawnPosition ()

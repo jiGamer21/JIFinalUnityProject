@@ -40,5 +40,21 @@ public class Enemy : MonoBehaviour
             gameManager.UpdateScore(5);
             
         }
+        if (collision.gameObject.CompareTag("Enemies"))
+        {
+            // gameManager.UpdateScore(+3);
+            // Destroy(other.gameObject);
+            Destroy(gameObject);
+            gameManager.UpdateScore(2);
+
+        }
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            // gameManager.UpdateScore(+3);
+            // Destroy(other.gameObject);
+            Destroy(gameObject);
+            gameManager.UpdateScore(-2);
+
+        }
     }
 }
