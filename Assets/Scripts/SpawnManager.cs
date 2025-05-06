@@ -10,13 +10,14 @@ public class SpawnManager: MonoBehaviour
     public float spawnRangeZ = 35f;
     public int enemyCount;
     public int waveNumber = 1;
+    private GameManager gameManager;
  
 
     // Start is called before the first frame update
     void Start()
     {
         SpawnEnemyWave(waveNumber);
-        
+        gameManager = GameObject.Find ("GameManager").GetComponent<GameManager>();
     }
 
     void SpawnEnemyWave(int enemiesToSpawn)
@@ -29,13 +30,18 @@ public class SpawnManager: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        enemyCount = FindObjectsOfType<Enemy>().Length;
+        
 
-        if(enemyCount == 0)
+        while (gameManager.isGameActive)
         {
-            waveNumber++;
-            SpawnEnemyWave(waveNumber);
+            enemyCount = FindObjectsOfType<Enemy>().Length;
+            
+            if(enemyCount == 0)
+            {
+                waveNumber++;
+                SpawnEnemyWave(waveNumber);
          
+            }
         }
     }
 
@@ -43,8 +49,9 @@ public class SpawnManager: MonoBehaviour
     {
         float spawnPositionX = Random.Range(-spawnRange, spawnRange);
         float spawnPositionZ = Random.Range(5, 100);
+        float spawnPositionY = Random.Range(0, 5);
 
-        Vector3 spawnPos = new Vector3(spawnPositionX, 0, spawnPositionZ);
+        Vector3 spawnPos = new Vector3(spawnPositionX, spawnPositionY, spawnPositionZ);
 
         return spawnPos;
     }

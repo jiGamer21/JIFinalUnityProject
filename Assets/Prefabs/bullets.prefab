@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4046539620008009332}
   m_Layer: 0
   m_Name: bullets
-  m_TagString: Untagged
+  m_TagString: Bullets
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65,7 +65,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8418283340458444863, guid: 6a2dec4c21c044af3ba0b34810d9823a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.71
+      value: -1.24
       objectReference: {fileID: 0}
     - target: {fileID: 8418283340458444863, guid: 6a2dec4c21c044af3ba0b34810d9823a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -123,7 +123,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7165714257065857770, guid: 186ad6ce3ad814e3eb0a033685f6f8bd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.71000004
+      value: -1.24
       objectReference: {fileID: 0}
     - target: {fileID: 7165714257065857770, guid: 186ad6ce3ad814e3eb0a033685f6f8bd, type: 3}
       propertyPath: m_LocalPosition.z

@@ -21,28 +21,23 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //float yInput = Input.GetAxis("Horizontal");
-
-        //  rb.velocity = new Vector3(xInput, yInput, speed * Time.deltaTime);
-
-        if (Input.GetKeyDown(KeyCode.Space))
+        
+        if (transform.position.y > -20 && transform.position.y < 20 | transform.position.x > -15 && transform.position.x < 15 |
+          transform.position.z > -20 && transform.position.z < 15)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
         {
             //Shoot
             Instantiate(bullets, bullets.transform.position, transform.rotation);
-           //Instantiate(RBulletPrefab, RBulletPrefab.transform.position, RBulletPrefab.transform.rotation);
+           
         }
-        if (transform.position.y > -20 && transform.position.y < 20 | transform.position.x > -15 && transform.position.x < 15 |
-          transform.position.z > -20 && transform.position.z < 15
-         )
-        { }
+        }
+        
         else
         {
+            //Destroys out of bounds bullets
             Destroy(gameObject);
         }
-
-
-        //transform.Rotate(Vector3.forward * yInput * turnSpeed * Time.deltaTime);
-        //transform.RotateAround(playerTransform.position, Vector3.forward, turnSpeed * Time.deltaTime);
     }
    
 }
