@@ -20,11 +20,14 @@ public class GameManager : MonoBehaviour
     public Button creditsButton; //to read the credits of the game
     public Button restartButton; //to restart the game
     //public Button controlsButton; //to find out the controls
-    //public Button backButton; //to return to the previous screen
+    public Button mainMenuButtonCredits; //to return to the previous screen
 
     public GameObject gameOverScreen;
     public GameObject titleScreen;
     public GameObject inGameScreen;
+    public GameObject creditsScreen;
+
+    // public Timer timer;
 
     public bool isGameActive;
 
@@ -34,8 +37,11 @@ public class GameManager : MonoBehaviour
         isGameActive = false;
         gameOverScreen.gameObject.SetActive(false);
         startButton.gameObject.SetActive(true);
+        creditsButton.gameObject.SetActive(true);
         titleScreen.gameObject.SetActive(true);
         inGameScreen.gameObject.SetActive(false);
+        creditsScreen.gameObject.SetActive(false);
+        
         //startButton.onClick.AddListener(StartGame());
 
     }
@@ -46,6 +52,7 @@ public class GameManager : MonoBehaviour
         startButton.gameObject.SetActive(false);
         titleScreen.gameObject.SetActive(false);
         inGameScreen.gameObject.SetActive(true);
+        creditsScreen.gameObject.SetActive(false);
         score = 0;
         //UpdateScore(0);
 
@@ -66,7 +73,14 @@ public class GameManager : MonoBehaviour
     public void GameOver ()
     {
         gameOverScreen.gameObject.SetActive(true);
+        startButton.gameObject.SetActive(false);
+        titleScreen.gameObject.SetActive(false);
+        inGameScreen.gameObject.SetActive(false);
         isGameActive = false;
+        restartButton.gameObject.SetActive(true);
+        mainMenuButton.gameObject.SetActive(true);
+        mainMenuButtonCredits.gameObject.SetActive(false);
+        creditsScreen.gameObject.SetActive(false);       
         finalScoreText.text = "Your Score: " + score;
         //restartButton.gameObject.SetActive(true);
 
@@ -78,4 +92,16 @@ public class GameManager : MonoBehaviour
     }
 
    // public 
+   public void CreditsScreen()
+   {
+        gameOverScreen.gameObject.SetActive(false);
+        startButton.gameObject.SetActive(false);
+        titleScreen.gameObject.SetActive(false);
+        inGameScreen.gameObject.SetActive(false);
+        isGameActive = false;
+        restartButton.gameObject.SetActive(false);
+        mainMenuButton.gameObject.SetActive(false);
+        mainMenuButtonCredits.gameObject.SetActive(true);
+        creditsScreen.gameObject.SetActive(true);
+   }
 }

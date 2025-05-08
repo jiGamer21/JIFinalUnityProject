@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("PLANE");
+        player = GameObject.Find("PlaneForGameRetopo");
         enemyRb = GetComponent<Rigidbody>();
         gameManager = GameObject.Find ("GameManager").GetComponent<GameManager>();
     }

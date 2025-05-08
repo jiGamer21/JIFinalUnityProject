@@ -18,8 +18,12 @@ public class Timer : MonoBehaviour
         gameManager = GameObject.Find ("GameManager").GetComponent<GameManager>();
         // Starts the timer automatically
         timerIsRunning = true;
+        
     }
-
+    // public void StartGame()
+    // {
+                
+    // }
     void Update()
     {
         //if (gameManager.isGameActive)
